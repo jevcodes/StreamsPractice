@@ -24,8 +24,14 @@ public class StreamMap {
 			System.out.println(i);
 	
 
-	    Stream<String> capslock = Stream.of("Jevic","Mike","Vince","Caris","Brook");
-	    capslock.map(x->x.toUpperCase()).forEach(x->System.out.println(x));
+	    Stream<String> capslock = Stream.of("Jevic","Jarret","D'Angelo","Caris","Spencer","Joe","Rodions");
+	    		
+	//    capslock.map(x->x.toUpperCase()).forEach(x->System.out.println(x));
+	    capslock.map(String::toUpperCase).forEach(System.out::println);
+	    
+	    
+	    
+	    
 	}
 
 }

@@ -38,6 +38,24 @@ public class StreamFilter {
 				   else return -1;
 			   
 			   }).limit(3).forEach(x->System.out.println(x.getName()));
+	   
+	   System.out.println("\nbelow are the next top 3 highest paid\n");
+	   
+	   //sort by salary and then return the next 3 highest paid employees
+	   employees.stream().sorted((a,b)-> {
+		   if (a.getSalary()<b.getSalary())
+				   return 1;
+				   else return -1;
+			   
+			   }).skip(3).limit(3).forEach(x->System.out.println(x.getName()));
+	   
+	     
+	   employees.stream().sorted((a,b)-> {
+		   if (a.getSalary()<b.getSalary())
+				   return 1;
+				   else return -1;
+			   
+			   }).findFirst().ifPresent(x->System.out.println("The highest paid employee is \n" +x.getName()));//findFirst(x->System.out.println(x.getName()));
 		
 	}
 	
